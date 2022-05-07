@@ -19,6 +19,13 @@ class ENV{
 
         fs.appendFileSync(this.#envPath, `${name}=${value}\n`);
     }
+    removeENV(name){
+        delete process.env[name];
+
+        const data = fs.readFileSync(this.#envPath, 'utf8').split('\n').filter(line => line.split('=')[0] !== name);
+        fs.writeFileSync(this.#envPath, data.join('\n'));
+    }
+
 }
 
 export default ENV;
