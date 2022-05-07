@@ -25,6 +25,17 @@ class ENV{
         const data = fs.readFileSync(this.#envPath, 'utf8').split('\n').filter(line => line.split('=')[0] !== name);
         fs.writeFileSync(this.#envPath, data.join('\n'));
     }
+    editENV(name, value){
+        process.env[name] = value;
+
+        const data = fs.readFileSync(this.#envPath, 'utf8').split('\n').map(line => {
+            const [key] = line.split('=');
+            if (key === name){
+                return `${name}=${value}`;
+            }
+        });
+        fs.writeFileSync(this.#envPath, data.filter(line => line !== undefined).join('\n'));
+    }
 
 }
 
