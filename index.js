@@ -1,6 +1,7 @@
 import fs from 'fs';
 
 class ENV{
+    #backup;
     #envPath;
 
     constructor(envPath){
@@ -11,6 +12,12 @@ class ENV{
             const [key, value] = line.split('=');
             process.env[key] = value;
         });
+    }
+
+    addENV(name, value){
+        process.env[name] = value;
+
+        fs.appendFileSync(this.#envPath, `${name}=${value}\n`);
     }
 }
 
