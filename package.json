@@ -1,0 +1,14 @@
+{
+  "name": "enver",
+  "version": "1.0.0",
+  "description": ".env configure-er",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "FloatingComet62",
+  "license": "MIT",
+  "dependencies": {}
+}
