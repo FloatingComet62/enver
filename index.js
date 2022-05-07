@@ -36,7 +36,9 @@ class ENV{
         });
         fs.writeFileSync(this.#envPath, data.filter(line => line !== undefined).join('\n'));
     }
-
+    resetENV(){
+        process = this.#backup;
+    }
 }
 
 export default ENV;
