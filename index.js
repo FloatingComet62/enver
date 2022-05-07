@@ -17,7 +17,7 @@ class ENV{
     addENV(name, value){
         process.env[name] = value;
 
-        fs.appendFileSync(this.#envPath, `${name}=${value}\n`);
+        fs.appendFileSync(this.#envPath, `\n${name}=${value}\n`);
     }
     removeENV(name){
         delete process.env[name];

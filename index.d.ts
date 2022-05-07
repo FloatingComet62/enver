@@ -5,6 +5,5 @@ declare class ENV {
     removeENV(name: string): void;
     editENV(name: string, value: string): void;
     resetENV(): void;
-    #private;
 }
 //# sourceMappingURL=index.d.ts.map
