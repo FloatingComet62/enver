@@ -1,7 +1,7 @@
 {
-  "name": "enver",
+  "name": "handle-env",
   "version": "1.0.0",
-  "description": ".env configure-er",
+  "description": "A env editor",
   "main": "index.js",
   "type": "module",
   "scripts": {
